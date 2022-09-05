@@ -30,12 +30,12 @@ flutter:
   fonts:
     - family: "TitilliumWeb"
       fonts:
-        - asset: fonts/TitilliumWeb/TitilliumWeb-Regular.ttf
+        - asset: assets/fonts/TitilliumWeb/TitilliumWeb-Regular.ttf
           weight: 400
-        - asset: fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf
+        - asset: assets/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf
           weight: 600
-        - asset: fonts/TitilliumWeb/TitilliumWeb-Bold.ttf
+        - asset: assets/fonts/TitilliumWeb/TitilliumWeb-Bold.ttf
           weight: 700
 
   assets:
-    - assets/images
+    - assets/images/
