@@ -9,7 +9,7 @@ class MuvverApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.appThemeData(),
+      theme: AppTheme.themeData(),
       onGenerateRoute: AppRouter.onGenerateRoutes,
     );
   }
