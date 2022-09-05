@@ -1,5 +1,5 @@
 name: jera_muvver
-description: A new Flutter project.
+description: Muvver is an application designed for testing.
 
 publish_to: "none"
 
@@ -12,6 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  provider: ^6.0.3
+  flutter_bloc: ^8.1.1
+  equatable: ^2.0.5
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -22,3 +26,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icons
+    - assets/images
