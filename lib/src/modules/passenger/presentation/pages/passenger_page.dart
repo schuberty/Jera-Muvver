@@ -3,6 +3,7 @@ import 'package:jera_muvver/src/modules/passenger/domain/enums/transport_type_en
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_bottom_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_sliver_app_bar_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_transport_radial_list_widget.dart';
 
 class PassengerPage extends StatefulWidget {
@@ -37,10 +38,7 @@ class _PassengerPageState extends State<PassengerPage> {
           SliverToBoxAdapter(
             child: Container(
               margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
-              child: const Text(
-                "Transporte",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
+              child: const PassengerSubtitleTextWidget("Transporte"),
             ),
           ),
           PassengerTransportRadialListWidget(

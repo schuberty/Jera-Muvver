@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_bottom_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_cancel_text_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_path_tab_bar_widget.dart';
-import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_sliver_app_bar_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
 
 class PassengerPathPage extends StatefulWidget {
   const PassengerPathPage({super.key});
@@ -23,24 +24,43 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
+    final heightScreen = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      floatingActionButton: PassengerNextFloatingButton(onPressed: () {}),
+      floatingActionButton: const PassengerNextFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: CustomScrollView(
-        slivers: <Widget>[
-          PassengerSliverAppBarWidget(
-            onLeadingPreassed: _navigateBackToTransportSelection,
-            titleText: "Viajante",
-            actions: <Widget>[
-              PassengerCancelTextButton(onPressed: _navigateBackToHome),
-            ],
-            bottom: PassengerAppBarBottomWidget(
-              height: 100,
-              text: "Qual o trajeto da sua viagem?",
-              tabBarWidget: PassengerPathTabBarWidget(tabController: _tabController),
-            ),
-          ),
+      appBar: PassengerAppBarWidget(
+        onLeadingPreassed: _navigateBackToTransportSelection,
+        titleText: "Viajante",
+        actions: <Widget>[
+          PassengerCancelTextButton(onPressed: _navigateBackToHome),
         ],
+        bottom: PassengerAppBarBottomWidget(
+          height: 94,
+          text: "Qual o trajeto da sua viagem?",
+          tabBarWidget: PassengerPathTabBarWidget(tabController: _tabController),
+        ),
+      ),
+      body: SafeArea(
+        child: TabBarView(
+          controller: _tabController,
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
+                  child: const PassengerSubtitleTextWidget(
+                    "Selecione a data e rota da sua viagem",
+                  ),
+                )
+              ],
+            ),
+            Container(
+              color: Colors.blue,
+            ),
+          ],
+        ),
       ),
     );
   }
