@@ -40,10 +40,11 @@ class HomePage extends StatelessWidget {
                 height: screenHeight * 0.18,
                 title: "Remetente",
                 subtitle: "Pra onde quer enviar seu objeto?",
-                assetName: "assets/images/ic-box.png",
+                assetName: "assets/images/box.png",
               ),
               SizedBox(height: screenHeight * 0.03),
               ShadedHomeCard(
+                onPressed: () => _navigateToPassengerPage(context),
                 height: screenHeight * 0.18,
                 title: "Viajante",
                 subtitle: "Vai viajar para onde?",
@@ -89,5 +90,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _navigateToPassengerPage(BuildContext context) {
+    Navigator.of(context).pushNamed("/passenger");
   }
 }

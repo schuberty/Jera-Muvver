@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class ShadedHomeCard extends StatelessWidget {
   final double height;
@@ -24,14 +25,9 @@ class ShadedHomeCard extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         height: height,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(3)),
-          gradient: LinearGradient(
-            colors: <Color>[Color(0xFF353740), Color(0xFF222222)],
-            transform: GradientRotation(-0.1),
-            begin: Alignment.centerRight,
-            end: Alignment.centerLeft,
-          ),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(3)),
+          gradient: AppConstants.linearGradientBlackToGrey(useRotation: true),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
