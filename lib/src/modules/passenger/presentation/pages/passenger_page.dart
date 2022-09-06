@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:jera_muvver/src/modules/passenger/domain/enums/transport_type_enum.dart';
-import 'package:jera_muvver/src/shared/app/app_constants.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_bottom_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_sliver_app_bar_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_transport_radial_list_widget.dart';
 
 class PassengerPage extends StatefulWidget {
   const PassengerPage({super.key});
@@ -11,70 +13,25 @@ class PassengerPage extends StatefulWidget {
 }
 
 class _PassengerPageState extends State<PassengerPage> {
-  TransportType currentTransportType = TransportType.car;
+  TransportType? currentTransportType;
+  VoidCallback? nextStepOnPressed;
 
   @override
   Widget build(BuildContext context) {
     const transportTypeList = TransportType.values;
 
     return Scaffold(
-      floatingActionButton: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16),
-        height: 48,
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-            backgroundColor: const Color(0xFF16A45C),
-          ),
-          child: const Text(
-            "Avançar",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
+      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepOnPressed),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            pinned: true,
-            centerTitle: true,
-            backgroundColor: Colors.black,
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-            leading: IconButton(
-              onPressed: () => _navigateBackToHomePage(context),
-              icon: const Icon(
-                Icons.close,
-                color: Colors.white,
-              ),
-            ),
-            title: Text(
-              "Viajante",
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.54),
-                fontSize: 16,
-              ),
-            ),
-            flexibleSpace: FlexibleSpaceBar(
-              titlePadding: EdgeInsets.zero,
-              title: Container(
-                decoration: BoxDecoration(gradient: AppConstants.linearGradientBlackToGrey()),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              decoration: BoxDecoration(gradient: AppConstants.linearGradientBlackToGrey()),
-              child: const Text(
-                "Qual será o meio de transporte da sua viagem?",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
+          PassengerSliverAppBarWidget(
+            onLeadingPreassed: _navigateBackToHomePage,
+            leadingIcon: Icons.close,
+            titleText: "Viajante",
+            bottom: const PassengerAppBarBottomWidget(
+              height: 80,
+              text: "Qual será o meio de transporte da sua viagem?",
             ),
           ),
           SliverToBoxAdapter(
@@ -86,19 +43,10 @@ class _PassengerPageState extends State<PassengerPage> {
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              final transport = transportTypeList[index];
-              return RadioListTile<TransportType>(
-                value: transport,
-                groupValue: currentTransportType,
-                title: Text(transport.transportName),
-                secondary: Image.asset("assets/icons/${transport.iconAsset}"),
-                onChanged: (value) => setState(() => currentTransportType = value!),
-                controlAffinity: ListTileControlAffinity.trailing,
-                activeColor: Colors.green,
-              );
-            }, childCount: transportTypeList.length),
+          PassengerTransportRadialListWidget(
+            transportList: transportTypeList,
+            groupValue: currentTransportType,
+            onChanged: _updateTransportTypeSelected,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 64)),
         ],
@@ -106,7 +54,18 @@ class _PassengerPageState extends State<PassengerPage> {
     );
   }
 
-  void _navigateBackToHomePage(BuildContext context) {
+  void _updateTransportTypeSelected(TransportType? value) {
+    setState(() {
+      currentTransportType = value;
+      nextStepOnPressed = _navigateToPassengerPathSelection;
+    });
+  }
+
+  void _navigateToPassengerPathSelection() {
+    Navigator.of(context).pushNamed("/passenger/path");
+  }
+
+  void _navigateBackToHomePage() {
     Navigator.of(context).pop();
   }
 }
