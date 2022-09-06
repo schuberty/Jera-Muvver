@@ -27,7 +27,7 @@ class ShadedHomeCard extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(3)),
-          gradient: AppConstants.linearGradientBlackToGrey(useRotation: true),
+          gradient: AppConstants.linearDarkGradient(),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

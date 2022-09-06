@@ -63,7 +63,7 @@ class PassengerSliverAppBarWidget extends StatelessWidget {
         titlePadding: EdgeInsets.zero,
         title: Container(
           decoration: BoxDecoration(
-            gradient: AppConstants.linearGradientBlackToGrey(),
+            gradient: AppConstants.linearDarkGradient(),
           ),
         ),
       ),
