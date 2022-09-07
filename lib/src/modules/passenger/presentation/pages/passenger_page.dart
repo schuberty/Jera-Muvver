@@ -15,14 +15,14 @@ class PassengerPage extends StatefulWidget {
 
 class _PassengerPageState extends State<PassengerPage> {
   TransportType? currentTransportType;
-  VoidCallback? nextStepOnPressed;
+  VoidCallback? nextStepCallback;
 
   @override
   Widget build(BuildContext context) {
     const transportTypeList = TransportType.values;
 
     return Scaffold(
-      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepOnPressed),
+      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: CustomScrollView(
         slivers: <Widget>[
@@ -55,7 +55,7 @@ class _PassengerPageState extends State<PassengerPage> {
   void updateTransportTypeSelected(TransportType? value) {
     setState(() {
       currentTransportType = value;
-      nextStepOnPressed = navigateToPassengerPathSelection;
+      nextStepCallback = navigateToPassengerPathSelection;
     });
   }
 

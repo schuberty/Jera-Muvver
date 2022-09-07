@@ -18,6 +18,8 @@ class PassengerPathPage extends StatefulWidget {
 class _PassengerPathPageState extends State<PassengerPathPage> with TickerProviderStateMixin {
   late final TabController tabController;
 
+  VoidCallback? nextStepCallback;
+
   @override
   void initState() {
     super.initState();
@@ -29,7 +31,9 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: const PassengerNextFloatingButton(),
+      floatingActionButton: PassengerNextFloatingButton(
+        onPressed: nextStepCallback,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: PassengerAppBarWidget(
         onLeadingPreassed: navigateBackToTransportSelection,
@@ -46,13 +50,21 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
       body: SafeArea(
         child: TabBarView(
           controller: tabController,
-          children: const <Widget>[
-            PassengerPathTab(),
-            PassengerPathMapTab(),
+          children: <Widget>[
+            PassengerPathTab(enableNextStep: enableNextStep),
+            const PassengerPathMapTab(),
           ],
         ),
       ),
     );
+  }
+
+  void enableNextStep() {
+    setState(() => nextStepCallback = navigateToPackageSize);
+  }
+
+  void navigateToPackageSize() {
+    Navigator.of(context).pushNamed("/passenger/package/type");
   }
 
   void navigateBackToTransportSelection() {

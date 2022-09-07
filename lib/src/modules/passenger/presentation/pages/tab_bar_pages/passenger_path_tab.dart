@@ -4,7 +4,9 @@ import 'package:jera_muvver/src/modules/passenger/presentation/components/passen
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
 
 class PassengerPathTab extends StatefulWidget {
-  const PassengerPathTab({super.key});
+  final VoidCallback enableNextStep;
+
+  const PassengerPathTab({required this.enableNextStep, super.key});
 
   @override
   State<PassengerPathTab> createState() => _PassengerPathTabState();
@@ -96,16 +98,17 @@ class _PassengerPathTabState extends State<PassengerPathTab> with AutomaticKeepA
       setState(() => canChangeArrivalDateTime = false);
     }
 
-    FocusScope.of(context).unfocus();
+    if (departureDateController.text.isNotEmpty && arrivalDateController.text.isNotEmpty) {
+      widget.enableNextStep();
+    }
   }
 
+  @override
+  bool get wantKeepAlive => true;
   @override
   void dispose() {
     departureDateController.dispose();
     arrivalDateController.dispose();
     super.dispose();
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }
