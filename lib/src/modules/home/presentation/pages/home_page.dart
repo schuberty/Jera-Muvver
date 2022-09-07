@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
             child: Icon(Icons.person, color: Colors.white),
           ),
         ],
+        automaticallyImplyLeading: false,
       ),
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 16),
