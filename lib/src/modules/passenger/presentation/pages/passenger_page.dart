@@ -15,13 +15,11 @@ class PassengerPage extends StatefulWidget {
 }
 
 class _PassengerPageState extends State<PassengerPage> {
-  RadialOption? currentTransportType;
+  RadialOption? currentRadialOption;
   VoidCallback? nextStepCallback;
 
   @override
   Widget build(BuildContext context) {
-    final transportTypeList = PassengerRadialOptions.availableTransportList;
-
     return Scaffold(
       floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -32,7 +30,6 @@ class _PassengerPageState extends State<PassengerPage> {
             leadingIcon: Icons.close,
             titleText: "Viajante",
             bottom: const PassengerAppBarBottomWidget(
-              height: 80,
               text: "Qual será o meio de transporte da sua viagem?",
             ),
           ),
@@ -43,9 +40,9 @@ class _PassengerPageState extends State<PassengerPage> {
             ),
           ),
           PassengerRadialListWidget(
-            objectList: transportTypeList,
-            groupValue: currentTransportType,
-            onChanged: updateTransportTypeSelected,
+            objectList: PassengerRadialOptions.availableTransportList,
+            groupValue: currentRadialOption,
+            onChanged: onRadialOptionUpdated,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 64)),
         ],
@@ -53,9 +50,9 @@ class _PassengerPageState extends State<PassengerPage> {
     );
   }
 
-  void updateTransportTypeSelected(RadialOption? value) {
+  void onRadialOptionUpdated(RadialOption? value) {
     setState(() {
-      currentTransportType = value;
+      currentRadialOption = value;
       nextStepCallback = navigateToPassengerPathSelection;
     });
   }

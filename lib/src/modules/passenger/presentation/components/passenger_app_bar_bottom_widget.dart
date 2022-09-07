@@ -7,7 +7,7 @@ class PassengerAppBarBottomWidget extends StatelessWidget implements PreferredSi
 
   const PassengerAppBarBottomWidget({
     required this.text,
-    this.height = 60,
+    this.height = 80,
     this.tabBarWidget,
     super.key,
   });
