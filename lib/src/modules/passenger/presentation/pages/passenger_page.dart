@@ -27,7 +27,7 @@ class _PassengerPageState extends State<PassengerPage> {
       body: CustomScrollView(
         slivers: <Widget>[
           PassengerSliverAppBarWidget(
-            onLeadingPreassed: _navigateBackToHomePage,
+            onLeadingPreassed: navigateBackToHomePage,
             leadingIcon: Icons.close,
             titleText: "Viajante",
             bottom: const PassengerAppBarBottomWidget(
@@ -44,7 +44,7 @@ class _PassengerPageState extends State<PassengerPage> {
           PassengerTransportRadialListWidget(
             transportList: transportTypeList,
             groupValue: currentTransportType,
-            onChanged: _updateTransportTypeSelected,
+            onChanged: updateTransportTypeSelected,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 64)),
         ],
@@ -52,18 +52,18 @@ class _PassengerPageState extends State<PassengerPage> {
     );
   }
 
-  void _updateTransportTypeSelected(TransportType? value) {
+  void updateTransportTypeSelected(TransportType? value) {
     setState(() {
       currentTransportType = value;
-      nextStepOnPressed = _navigateToPassengerPathSelection;
+      nextStepOnPressed = navigateToPassengerPathSelection;
     });
   }
 
-  void _navigateToPassengerPathSelection() {
+  void navigateToPassengerPathSelection() {
     Navigator.of(context).pushNamed("/passenger/path");
   }
 
-  void _navigateBackToHomePage() {
+  void navigateBackToHomePage() {
     Navigator.of(context).pop();
   }
 }
