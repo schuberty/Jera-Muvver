@@ -7,10 +7,10 @@ class PassengerAppBarBottomWidget extends StatelessWidget implements PreferredSi
 
   const PassengerAppBarBottomWidget({
     required this.text,
-    this.height = 80,
+    double? height,
     this.tabBarWidget,
     super.key,
-  });
+  }) : height = height ?? 80;
 
   @override
   Widget build(BuildContext context) {

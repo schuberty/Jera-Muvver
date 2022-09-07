@@ -1,9 +1,9 @@
-class RadialOption {
+abstract class RadialOptionBase {
   final String asset;
   final String name;
   final String? description;
 
-  RadialOption({
+  RadialOptionBase({
     required this.asset,
     required this.name,
     this.description,
