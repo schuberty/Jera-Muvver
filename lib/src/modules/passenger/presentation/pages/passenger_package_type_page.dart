@@ -11,14 +11,14 @@ class PassengerPackageTypePage extends StatefulWidget {
 }
 
 class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
-  RadialOptionBase? currentRadialOption;
+  RadialOptionModel? packageTypeOption;
   VoidCallback? nextStepCallback;
 
   @override
   Widget build(BuildContext context) {
     return PassengerRadialSelectionBody(
       radialList: PassengerRadialOptions.availablePackageTypeList,
-      radialGroup: currentRadialOption,
+      radialGroup: packageTypeOption,
       nextStepCallback: nextStepCallback,
       onBackLeadingPressed: navigateBackToPathSelection,
       onRadialOptionUpdated: onRadialOptionUpdated,
@@ -28,9 +28,9 @@ class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
     );
   }
 
-  void onRadialOptionUpdated(RadialOptionBase? value) {
+  void onRadialOptionUpdated(RadialOptionModel? value) {
     setState(() {
-      currentRadialOption = value;
+      packageTypeOption = value;
       nextStepCallback = navigateToPackageWeightSelection;
     });
   }

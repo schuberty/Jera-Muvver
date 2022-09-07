@@ -7,11 +7,11 @@ import 'package:jera_muvver/src/modules/passenger/presentation/components/passen
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
 
 class PassengerRadialSelectionBody extends StatelessWidget {
-  final List<RadialOptionBase> radialList;
-  final RadialOptionBase? radialGroup;
+  final List<RadialOptionModel> radialList;
+  final RadialOptionModel? radialGroup;
   final VoidCallback? nextStepCallback;
   final VoidCallback onBackLeadingPressed;
-  final Function(RadialOptionBase?) onRadialOptionUpdated;
+  final Function(RadialOptionModel?) onRadialOptionUpdated;
   final String pageTitle;
   final String pageSubtitle;
   final String radialListTitle;

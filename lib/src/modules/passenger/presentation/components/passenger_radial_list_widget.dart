@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/domain/model/radial_option.dart';
 
 class PassengerRadialListWidget extends StatelessWidget {
-  final RadialOptionBase? groupValue;
-  final List<RadialOptionBase> objectList;
-  final Function(RadialOptionBase?) onChanged;
+  final RadialOptionModel? groupValue;
+  final List<RadialOptionModel> objectList;
+  final Function(RadialOptionModel?) onChanged;
 
   const PassengerRadialListWidget({
     required this.objectList,
@@ -40,7 +40,7 @@ class PassengerRadialListWidget extends StatelessWidget {
         ? Text(radialOption.description!, style: subtitleStyle)
         : null;
 
-    return RadioListTile<RadialOptionBase>(
+    return RadioListTile<RadialOptionModel>(
       value: radialOption,
       groupValue: groupValue,
       title: Text(radialOption.name, style: titleStyle),
