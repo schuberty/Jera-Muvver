@@ -7,14 +7,14 @@ import 'package:jera_muvver/src/modules/passenger/presentation/components/passen
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/radial_options.dart';
 
-class PassengerPackageTypePage extends StatefulWidget {
-  const PassengerPackageTypePage({super.key});
+class PassengerPackageWeightPage extends StatefulWidget {
+  const PassengerPackageWeightPage({super.key});
 
   @override
-  State<PassengerPackageTypePage> createState() => _PassengerPackageTypePageState();
+  State<PassengerPackageWeightPage> createState() => _PassengerPackageWeightPageState();
 }
 
-class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
+class _PassengerPackageWeightPageState extends State<PassengerPackageWeightPage> {
   RadialOption? currentRadialOption;
   VoidCallback? nextStepCallback;
 
@@ -30,17 +30,18 @@ class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
             leadingIcon: Icons.arrow_back,
             titleText: "Viajante",
             bottom: const PassengerAppBarBottomWidget(
-              text: "O volume que você pode deslocar tem tamanho similar a que?",
+              text: "Qual o peso do volume?",
+              height: 54,
             ),
           ),
           SliverToBoxAdapter(
             child: Container(
               margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
-              child: const PassengerSubtitleTextWidget("Tamanhos"),
+              child: const PassengerSubtitleTextWidget("Peso"),
             ),
           ),
           PassengerRadialListWidget(
-            objectList: PassengerRadialOptions.availablePackageList,
+            objectList: PassengerRadialOptions.availableWeightList,
             groupValue: currentRadialOption,
             onChanged: onRadialOptionUpdated,
           ),
@@ -57,9 +58,7 @@ class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
     });
   }
 
-  void navigateToPackageWeightSelection() {
-    Navigator.of(context).pushNamed('/passenger/package/weight');
-  }
+  void navigateToPackageWeightSelection() {}
 
   void navigateBackToPathSelection() {
     Navigator.of(context).pop();

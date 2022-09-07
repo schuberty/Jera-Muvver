@@ -21,4 +21,12 @@ class PassengerRadialOptions {
     RadialOption(asset: 'ic_mala.png', name: "Mala grande", description: "55 x 35 cm"),
     RadialOption(asset: 'ic_big_box.png', name: "Caixa grande", description: "60 x 40 cm"),
   ];
+
+  static final availableWeightList = <RadialOption>[
+    RadialOption(asset: "ic_balance.png", name: "Até 1 kg"),
+    RadialOption(asset: "ic_balance.png", name: "Até 5 kg"),
+    RadialOption(asset: "ic_balance.png", name: "Até 10 kg"),
+    RadialOption(asset: "ic_balance.png", name: "Até 20 kg"),
+    RadialOption(asset: "ic_balance.png", name: "Acima de 20 kg"),
+  ];
 }
