@@ -4,9 +4,9 @@ import 'package:jera_muvver/src/modules/passenger/presentation/components/passen
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_cancel_text_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_path_tab_bar_widget.dart';
-import 'package:jera_muvver/src/modules/passenger/presentation/pages/tab_bar_pages/passengern_path_map_tab.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/pages/tab_bars/passengern_path_map_tab.dart';
 
-import 'tab_bar_pages/passenger_path_tab.dart';
+import 'tab_bars/passenger_path_tab.dart';
 
 class PassengerPathPage extends StatefulWidget {
   const PassengerPathPage({super.key});
