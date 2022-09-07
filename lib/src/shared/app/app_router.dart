@@ -7,6 +7,8 @@ import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_p
 import 'package:jera_muvver/src/shared/app/route/route_animator.dart';
 
 class AppRouter {
+  const AppRouter._();
+
   static Route<void>? onGenerateRoutes(RouteSettings routeSettings) {
     final arguments = routeSettings.arguments;
 

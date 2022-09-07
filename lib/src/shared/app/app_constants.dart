@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 class AppConstants {
+  const AppConstants._();
+
   static const secondaryColor = Color(0xFFB8B8B8);
 
   static LinearGradient linearDarkGradient({bool useRotation = true}) {

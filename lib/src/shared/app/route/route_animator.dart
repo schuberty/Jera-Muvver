@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 class RouteAnimator {
+  const RouteAnimator._();
+
   static PageRouteBuilder rightToLeftRoute(Widget page) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => page,

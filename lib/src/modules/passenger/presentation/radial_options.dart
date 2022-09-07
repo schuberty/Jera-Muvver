@@ -1,6 +1,8 @@
 import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 
 class PassengerRadialOptions {
+  const PassengerRadialOptions._();
+
   static final availableTransportList = <RadialOptionModel>[
     RadialOptionModel(asset: "ic_car.png", name: "Carro"),
     RadialOptionModel(asset: "ic_aviao.png", name: "Avião"),
