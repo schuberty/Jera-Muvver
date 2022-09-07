@@ -31,9 +31,7 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: PassengerNextFloatingButton(
-        onPressed: nextStepCallback,
-      ),
+      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: PassengerAppBarWidget(
         onLeadingPreassed: navigateBackToTransportSelection,

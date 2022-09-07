@@ -12,4 +12,13 @@ class PassengerRadialOptions {
     RadialOption(asset: "ic_bus.png", name: "Ônibus"),
     RadialOption(asset: "ic_barco.png", name: "Embarcação"),
   ];
+
+  static final availablePackageList = <RadialOption>[
+    RadialOption(asset: 'ic_email.png', name: "Envelope", description: ""),
+    RadialOption(asset: 'ic_book.png', name: "Livro", description: ""),
+    RadialOption(asset: 'ic_box.png', name: "Caixa de sapato", description: ""),
+    RadialOption(asset: 'ic_backpack.png', name: "Mochila", description: ""),
+    RadialOption(asset: 'ic_mala.png', name: "Mala grande", description: ""),
+    RadialOption(asset: 'ic_big_box.png', name: "Caixa grande", description: ""),
+  ];
 }
