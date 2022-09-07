@@ -1,4 +1,4 @@
-import 'package:jera_muvver/src/modules/passenger/domain/model/radial_option.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 
 class PassengerRadialOptions {
   static final availableTransportList = <RadialOptionModel>[

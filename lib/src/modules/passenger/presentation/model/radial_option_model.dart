@@ -8,4 +8,9 @@ class RadialOptionModel {
     required this.name,
     this.description,
   });
+
+  @override
+  String toString() {
+    return "RadialOption('$name')";
+  }
 }

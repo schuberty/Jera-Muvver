@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:jera_muvver/src/modules/passenger/domain/model/radial_option.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/cubit/passenger_cubit.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/pages/page_body/passenger_radial_selection_body.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/radial_options.dart';
+import 'package:provider/provider.dart';
 
 class PassengerPackageTypePage extends StatefulWidget {
   const PassengerPackageTypePage({super.key});
@@ -36,7 +38,11 @@ class _PassengerPackageTypePageState extends State<PassengerPackageTypePage> {
   }
 
   void navigateToPackageWeightSelection() {
-    Navigator.of(context).pushNamed('/passenger/package/weight');
+    if (packageTypeOption != null) {
+      context.read<PassengerCubit>().updatePackageType = packageTypeOption!;
+
+      Navigator.of(context).pushNamed('/passenger/package/weight');
+    }
   }
 
   void navigateBackToPathSelection() {

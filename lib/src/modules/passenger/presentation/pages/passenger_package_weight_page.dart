@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jera_muvver/src/modules/passenger/domain/model/radial_option.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/cubit/passenger_cubit.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/radial_options.dart';
+import 'package:provider/provider.dart';
 
 import 'page_body/passenger_radial_selection_body.dart';
 
@@ -37,7 +39,13 @@ class _PassengerPackageWeightPageState extends State<PassengerPackageWeightPage>
     });
   }
 
-  void navigateToPackageComplete() {}
+  void navigateToPackageComplete() {
+    if (packageWeightOption != null) {
+      context.read<PassengerCubit>().updatePackageWeight = packageWeightOption!;
+
+      context.read<PassengerCubit>().sendTransportData();
+    }
+  }
 
   void navigateBackToPathSelection() {
     Navigator.of(context).pop();

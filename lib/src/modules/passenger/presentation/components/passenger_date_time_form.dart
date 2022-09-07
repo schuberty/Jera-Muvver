@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:jera_muvver/src/shared/utils.dart';
 
 class PassengerDateTimeForm extends StatelessWidget {
   final TextEditingController textController;
@@ -70,7 +70,7 @@ class PassengerDateTimeForm extends StatelessWidget {
     );
 
     if (date != null) {
-      final formattedDate = DateFormat("dd/MM/yyyy").format(date);
+      final formattedDate = formatDate(date);
       textController.text = formattedDate;
     }
 

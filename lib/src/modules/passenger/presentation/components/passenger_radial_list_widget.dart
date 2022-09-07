@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jera_muvver/src/modules/passenger/domain/model/radial_option.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 
 class PassengerRadialListWidget extends StatelessWidget {
   final RadialOptionModel? groupValue;

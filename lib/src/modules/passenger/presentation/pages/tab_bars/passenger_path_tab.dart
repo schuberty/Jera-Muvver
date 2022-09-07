@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_date_time_form.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/cubit/passenger_cubit.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/model/package_dates_model.dart';
+import 'package:jera_muvver/src/shared/utils.dart';
+import 'package:provider/provider.dart';
 
 class PassengerPathTab extends StatefulWidget {
   final VoidCallback enableNextStep;
@@ -78,27 +81,36 @@ class _PassengerPathTabState extends State<PassengerPathTab> with AutomaticKeepA
   }
 
   void updateDateInput() {
+    DateTime? departureDate;
+    DateTime? arrivalDate;
+
     if (departureDateController.text.isNotEmpty) {
-      final departureDateTime = DateFormat("dd/MM/yyyy").parse(departureDateController.text);
-      departureDateTime.add(const Duration(microseconds: 1));
+      departureDate = parseDate(departureDateController.text);
 
       if (arrivalDateController.text.isNotEmpty) {
-        final arrivalDateTime = DateFormat("dd/MM/yyyy").parse(arrivalDateController.text);
+        arrivalDate = parseDate(arrivalDateController.text);
 
-        if (departureDateTime.isAfter(arrivalDateTime)) {
+        if (departureDate.isAfter(arrivalDate)) {
           arrivalDateController.clear();
         }
       }
 
       setState(() {
-        arrivalFirstDateTime = departureDateTime;
+        arrivalFirstDateTime = departureDate!;
         canChangeArrivalDateTime = true;
       });
     } else {
       setState(() => canChangeArrivalDateTime = false);
     }
 
-    if (departureDateController.text.isNotEmpty && arrivalDateController.text.isNotEmpty) {
+    if (departureDate != null && arrivalDate != null) {
+      final transportDates = TransportDateModel(
+        departureDate: departureDate,
+        arrivalDate: arrivalDate,
+      );
+
+      context.read<PassengerCubit>().updateTransportDate = transportDates;
+
       widget.enableNextStep();
     }
   }
