@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_bottom_widget.dart';
-import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_floating_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_radial_list_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_sliver_app_bar_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_subtitle_text_widget.dart';
@@ -33,7 +33,7 @@ class PassengerRadialSelectionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepCallback),
+      floatingActionButton: PassengerFloatingButton("Avançar", onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: CustomScrollView(
         slivers: <Widget>[

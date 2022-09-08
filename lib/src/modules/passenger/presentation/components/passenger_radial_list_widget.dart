@@ -31,7 +31,7 @@ class PassengerRadialListWidget extends StatelessWidget {
 
     const subtitleStyle = TextStyle(
       fontSize: 12,
-      color: Color(0x6D222252),
+      color: Color(0x8A222222),
     );
 
     final radialOption = objectList[index];

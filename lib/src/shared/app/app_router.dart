@@ -4,6 +4,7 @@ import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_p
 import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_package_weight_page.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_page.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_path_page.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/pages/passenger_trip_created_page.dart';
 import 'package:jera_muvver/src/shared/app/route/route_animator.dart';
 
 class AppRouter {
@@ -23,6 +24,9 @@ class AppRouter {
         return RouteAnimator.rightToLeftRoute(const PassengerPackageTypePage());
       case '/passenger/package/weight':
         return RouteAnimator.rightToLeftRoute(const PassengerPackageWeightPage());
+      case '/passenger/trip_created':
+        return MaterialPageRoute(builder: (_) => const PassengerTripCreatedPage());
+
       default:
         return _homePage();
     }

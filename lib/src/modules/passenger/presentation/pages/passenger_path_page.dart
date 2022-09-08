@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_bottom_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_app_bar_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_cancel_text_button.dart';
-import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_next_floating_button.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_floating_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_path_tab_bar_widget.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/pages/tab_bars/passengern_path_map_tab.dart';
+import 'package:jera_muvver/src/shared/extensions.dart';
 
 import 'tab_bars/passenger_path_tab.dart';
 
@@ -31,7 +32,7 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: PassengerNextFloatingButton(onPressed: nextStepCallback),
+      floatingActionButton: PassengerFloatingButton("Avançar", onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: PassengerAppBarWidget(
         onLeadingPreassed: navigateBackToTransportSelection,
@@ -70,7 +71,7 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
   }
 
   void navigateBackToHome() {
-    Navigator.of(context).pushNamedAndRemoveUntil("/", (_) => false);
+    Navigator.of(context).pushNamedAndRemoveAll("/");
   }
 
   void unfocusKeyboardOnTabChange() {

@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               const Text(
                 "Entregue ou envie.",
-                style: TextStyle(color: Color(0x6D222252), fontSize: 20),
+                style: TextStyle(color: Color(0x8A222222), fontSize: 20),
               ),
               SizedBox(height: screenHeight * 0.05),
               const ShadedHomeCard(

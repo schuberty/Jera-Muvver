@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PassengerNextFloatingButton extends StatelessWidget {
+class PassengerFloatingButton extends StatelessWidget {
+  final String text;
   final VoidCallback? onPressed;
 
   final Color _buttonColor = const Color(0xFF16A45C);
   final Color _disabledButtonColor = const Color(0xFF89BBA2);
 
-  const PassengerNextFloatingButton({this.onPressed, super.key});
+  const PassengerFloatingButton(this.text, {this.onPressed, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,9 @@ class PassengerNextFloatingButton extends StatelessWidget {
           backgroundColor: _buttonColor,
           disabledBackgroundColor: _disabledButtonColor,
         ),
-        child: const Text(
-          "Avançar",
-          style: TextStyle(
+        child: Text(
+          text,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
             color: Colors.white,
