@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class ShadedHomeCard extends StatelessWidget {
-  final double height;
+  final double? height;
   final VoidCallback? onPressed;
   final String title;
   final String subtitle;
   final String assetName;
 
   const ShadedHomeCard({
-    required this.height,
+    this.height,
     required this.title,
     required this.subtitle,
     required this.assetName,
@@ -32,7 +32,7 @@ class ShadedHomeCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Expanded(
+            Flexible(
               flex: 3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -50,7 +50,7 @@ class ShadedHomeCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 42,
+                    // height: 30,
                     margin: const EdgeInsets.fromLTRB(24, 4, 0, 24),
                     width: cardWidth * 0.5,
                     child: Text(
@@ -65,9 +65,13 @@ class ShadedHomeCard extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            Flexible(
               flex: 2,
-              child: Image.asset(assetName),
+              child: SizedBox(
+                width: double.infinity,
+                height: cardWidth * 0.2,
+                child: Image.asset(assetName),
+              ),
             )
           ],
         ),

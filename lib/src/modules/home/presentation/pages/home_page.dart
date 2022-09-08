@@ -34,11 +34,10 @@ class HomePage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               const Text(
                 "Entregue ou envie.",
-                style: TextStyle(color: Color(0x22222252), fontSize: 20),
+                style: TextStyle(color: Color(0x6D222252), fontSize: 20),
               ),
               SizedBox(height: screenHeight * 0.05),
-              ShadedHomeCard(
-                height: screenHeight * 0.18,
+              const ShadedHomeCard(
                 title: "Remetente",
                 subtitle: "Pra onde quer enviar seu objeto?",
                 assetName: "assets/images/box.png",
@@ -46,7 +45,6 @@ class HomePage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.03),
               ShadedHomeCard(
                 onPressed: () => _navigateToPassengerPage(context),
-                height: screenHeight * 0.18,
                 title: "Viajante",
                 subtitle: "Vai viajar para onde?",
                 assetName: "assets/images/delivery-truck.png",
