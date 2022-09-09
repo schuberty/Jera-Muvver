@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="dev.gabrielschubert.jera_muvver.test">
 <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="jera_muvver"
+        android:label="Muvver Clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

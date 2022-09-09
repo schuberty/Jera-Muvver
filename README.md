@@ -1,16 +1,42 @@
-# jera_muvver
+<h1 align="center">Muvver Clone</h1>
 
-A new Flutter project.
+<div align="center">
 
-## Getting Started
+Aplicativo desenvolvido como um teste tendo o objetivo de recriar parte do design do aplicativo Muvver.
 
-This project is a starting point for a Flutter application.
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/schuberty/Jera-Muvver)
+![GitHub last commit](https://img.shields.io/github/last-commit/schuberty/Jera-Muvver?color=yellow)
 
-A few resources to get you started if this is your first Flutter project:
+</div>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Arquitetura
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aplicativo desenvolvido na versão 3.3.0 do [Flutter](https://flutter.dev) utilizando [BLoC](https://pub.dev/packages/flutter_bloc) e [Provider](https://pub.dev/packages/provider) para gerência de estados e injeção de dependências e  alguns conceitos de [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) como padrão da arquitetura do software.
+
+# Como Usar o Repositório
+
+Após clona-lo, certifique-se de:
+
+1. Rodar o comando `flutter pub get` para obter os pacotes mencionados no [pubspec.yaml](./pubspec.yaml).
+2. Rodar o aplicativo a partir da sua IDE preferida ou com o comando `flutter run`.
+
+# Tempo Desenvolvimento
+
+Média do tempo do desenvolvimento dos módulos, testes e outros componentes do aplicativo pode ser observado na tabela abaixo.
+
+| Tarefa                                          | Tempo Médio |
+| ----------------------------------------------- | :---------: |
+| Regra base de estados                           |   1 hora    |
+| Pesquisa como implementar sliver bar            |   1 hora    |
+| Implementação requisitos base                   |  14 horas   |
+|                                                 |             |
+| Tempo requisitos básicos                        |  14 horas   |
+| **Tempo total**                                 |  16 horas   |
+
+Aplicativo foi testado somente na plataforma Android, não sabendo como pode se comportar em um dispositivos iOS.
+
+<div align="center">
+
+
+
+</div>

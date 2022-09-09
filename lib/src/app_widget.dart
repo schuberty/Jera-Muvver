@@ -13,6 +13,7 @@ class MuvverApp extends StatelessWidget {
     return MultiProvider(
       providers: appModules,
       child: MaterialApp(
+        title: "Muvver Clone",
         debugShowCheckedModeBanner: false,
         navigatorKey: InformService().globalNavigator,
         onGenerateRoute: AppRouter.onGenerateRoutes,
