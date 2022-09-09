@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_cancel_text_button.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/cubit/passenger_cubit.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/radial_options.dart';
@@ -26,9 +27,11 @@ class _PassengerPackageWeightPageState extends State<PassengerPackageWeightPage>
       nextStepCallback: nextStepCallback,
       onBackLeadingPressed: navigateBackToPathSelection,
       onRadialOptionUpdated: onRadialOptionUpdated,
+      actions: <Widget>[PassengerCancelTextButton(onPressed: navigateBackToHome)],
       pageTitle: "Viajante",
       pageSubtitle: "Qual o peso do volume?",
       radialListTitle: "Peso",
+      nextButtonText: "Criar viagem",
       appBarHeight: 54,
     );
   }
@@ -48,6 +51,10 @@ class _PassengerPackageWeightPageState extends State<PassengerPackageWeightPage>
 
       Navigator.of(context).pushNamedAndRemoveAll('/passenger/trip_created');
     }
+  }
+
+  void navigateBackToHome() {
+    Navigator.of(context).pushNamedAndRemoveAll("/");
   }
 
   void navigateBackToPathSelection() {

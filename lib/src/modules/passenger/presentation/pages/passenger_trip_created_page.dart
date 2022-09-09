@@ -17,7 +17,7 @@ class _PassengerTripCreatedPageState extends State<PassengerTripCreatedPage> {
 
     return Scaffold(
       floatingActionButton: PassengerFloatingButton(
-        "Visualizar volumes",
+        "Voltar ao início",
         onPressed: nextStepCallback,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

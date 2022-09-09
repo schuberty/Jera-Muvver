@@ -15,7 +15,9 @@ class PassengerRadialSelectionBody extends StatelessWidget {
   final String pageTitle;
   final String pageSubtitle;
   final String radialListTitle;
+  final String nextButtonText;
   final double? appBarHeight;
+  final List<Widget>? actions;
 
   const PassengerRadialSelectionBody({
     required this.radialList,
@@ -26,14 +28,16 @@ class PassengerRadialSelectionBody extends StatelessWidget {
     required this.pageTitle,
     required this.pageSubtitle,
     required this.radialListTitle,
+    this.nextButtonText = "Avançar",
     this.appBarHeight,
+    this.actions,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: PassengerFloatingButton("Avançar", onPressed: nextStepCallback),
+      floatingActionButton: PassengerFloatingButton(nextButtonText, onPressed: nextStepCallback),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: CustomScrollView(
         slivers: <Widget>[
@@ -45,6 +49,7 @@ class PassengerRadialSelectionBody extends StatelessWidget {
               text: pageSubtitle,
               height: appBarHeight,
             ),
+            actions: actions,
           ),
           SliverToBoxAdapter(
             child: Container(
