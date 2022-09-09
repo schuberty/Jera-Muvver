@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/app_modules.dart';
 import 'package:jera_muvver/src/shared/app/app_router.dart';
 import 'package:jera_muvver/src/shared/app/app_theme.dart';
+import 'package:jera_muvver/src/shared/services/inform_service.dart';
 import 'package:provider/provider.dart';
 
 class MuvverApp extends StatelessWidget {
@@ -13,8 +14,9 @@ class MuvverApp extends StatelessWidget {
       providers: appModules,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.themeData(),
+        navigatorKey: InformService().globalNavigator,
         onGenerateRoute: AppRouter.onGenerateRoutes,
+        theme: AppTheme.themeData(),
       ),
     );
   }

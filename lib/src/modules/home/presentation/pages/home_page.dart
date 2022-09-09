@@ -4,6 +4,7 @@ import 'package:jera_muvver/src/modules/home/presentation/components/icon_profil
 import 'package:jera_muvver/src/modules/home/presentation/components/icon_text_button.dart';
 import 'package:jera_muvver/src/modules/home/presentation/components/shaded_home_card.dart';
 import 'package:jera_muvver/src/shared/app/app_constants.dart';
+import 'package:jera_muvver/src/shared/services/inform_service.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,9 +18,10 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Image.asset("assets/images/logo.png"),
-        actions: const <Widget>[
+        actions: <Widget>[
           IconProfileButton(
-            child: Icon(Icons.person, color: Colors.white),
+            onPressed: _showNotImplementedSnackBar,
+            child: const Icon(Icons.person, color: Colors.white),
           ),
         ],
         automaticallyImplyLeading: false,
@@ -38,7 +40,8 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(color: AppConstants.subtitleColor, fontSize: 20),
               ),
               SizedBox(height: screenHeight * 0.05),
-              const ShadedHomeCard(
+              ShadedHomeCard(
+                onPressed: _showNotImplementedSnackBar,
                 title: "Remetente",
                 subtitle: "Pra onde quer enviar seu objeto?",
                 assetName: "assets/images/box.png",
@@ -66,22 +69,22 @@ class HomePage extends StatelessWidget {
                 bellowText: "Início",
               ),
               IconTextButton(
-                onPressed: () {},
+                onPressed: _showNotImplementedSnackBar,
                 icon: Icons.notifications,
                 bellowText: "Notificações",
               ),
               IconTextButton(
-                onPressed: () {},
+                onPressed: _showNotImplementedSnackBar,
                 icon: Icons.chat_bubble,
                 bellowText: "Chat",
               ),
               IconTextButton(
-                onPressed: () {},
+                onPressed: _showNotImplementedSnackBar,
                 icon: Icons.layers,
                 bellowText: "Pedidos",
               ),
               IconTextButton(
-                onPressed: () {},
+                onPressed: _showNotImplementedSnackBar,
                 icon: Icons.local_shipping,
                 bellowText: "Entregas",
               ),
@@ -94,5 +97,9 @@ class HomePage extends StatelessWidget {
 
   void _navigateToPassengerPage(BuildContext context) {
     Navigator.of(context).pushNamed("/passenger");
+  }
+
+  void _showNotImplementedSnackBar() {
+    InformService.showNotImplementedSnackBar();
   }
 }

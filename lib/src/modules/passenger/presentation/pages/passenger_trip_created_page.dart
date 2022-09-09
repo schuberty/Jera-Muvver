@@ -13,8 +13,6 @@ class PassengerTripCreatedPage extends StatefulWidget {
 class _PassengerTripCreatedPageState extends State<PassengerTripCreatedPage> {
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       floatingActionButton: PassengerFloatingButton(
         "Voltar ao início",
@@ -22,7 +20,9 @@ class _PassengerTripCreatedPageState extends State<PassengerTripCreatedPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
-        child: Center(
+        child: Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.symmetric(horizontal: 8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

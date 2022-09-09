@@ -50,7 +50,7 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
         child: TabBarView(
           controller: tabController,
           children: <Widget>[
-            PassengerPathTab(enableNextStep: enableNextStep),
+            PassengerPathTab(enableNextStep: updateNextStep),
             const PassengerPathMapTab(),
           ],
         ),
@@ -58,8 +58,12 @@ class _PassengerPathPageState extends State<PassengerPathPage> with TickerProvid
     );
   }
 
-  void enableNextStep() {
-    setState(() => nextStepCallback = navigateToPackageSize);
+  void updateNextStep(bool enable) {
+    if (enable) {
+      setState(() => nextStepCallback = navigateToPackageSize);
+    } else {
+      setState(() => nextStepCallback = null);
+    }
   }
 
   void navigateToPackageSize() {

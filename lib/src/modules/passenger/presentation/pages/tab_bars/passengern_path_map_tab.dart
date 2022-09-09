@@ -7,7 +7,7 @@ class PassengerPathMapTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: PassengerSubtitleTextWidget("Não implementado"),
+      child: PassengerSubtitleTextWidget("Não implementado."),
     );
   }
 }
