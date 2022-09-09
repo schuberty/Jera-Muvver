@@ -3,6 +3,7 @@ import 'package:jera_muvver/src/modules/home/presentation/components/home_header
 import 'package:jera_muvver/src/modules/home/presentation/components/icon_profile_button.dart';
 import 'package:jera_muvver/src/modules/home/presentation/components/icon_text_button.dart';
 import 'package:jera_muvver/src/modules/home/presentation/components/shaded_home_card.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               const Text(
                 "Entregue ou envie.",
-                style: TextStyle(color: Color(0x8A222222), fontSize: 20),
+                style: TextStyle(color: AppConstants.subtitleColor, fontSize: 20),
               ),
               SizedBox(height: screenHeight * 0.05),
               const ShadedHomeCard(

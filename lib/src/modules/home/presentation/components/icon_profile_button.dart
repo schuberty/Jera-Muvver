@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class IconProfileButton extends StatelessWidget {
   final Widget child;
@@ -21,7 +22,7 @@ class IconProfileButton extends StatelessWidget {
             BoxShadow(
               blurRadius: 3,
               offset: Offset(0, 3),
-              color: Color(0x22222229),
+              color: AppConstants.darkColor,
             ),
           ],
           borderRadius: const BorderRadius.all(Radius.circular(2)),

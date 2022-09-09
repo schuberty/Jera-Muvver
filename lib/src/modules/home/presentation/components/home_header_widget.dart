@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
   const HomeHeaderWidget({super.key});
@@ -9,7 +10,7 @@ class HomeHeaderWidget extends StatelessWidget {
       text: const TextSpan(
         text: "Facilitando seus ",
         style: TextStyle(
-          color: Color(0xFF222222),
+          color: AppConstants.darkColor,
           fontSize: 24,
           fontFamily: "TitilliumWeb",
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/components/passenger_floating_button.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 import 'package:jera_muvver/src/shared/extensions.dart';
 
 class PassengerTripCreatedPage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _PassengerTripCreatedPageState extends State<PassengerTripCreatedPage> {
               const SizedBox(height: 29),
               const Text(
                 "Ao prosseguir, você declara para efeitos legais, administrativos, jurídicos e demais aplicáveis, a veracidade de todas as informações prestadas antes, durante e após qualquer uma das etapas do app.",
-                style: TextStyle(color: Color(0x8A222222), fontSize: 12),
+                style: TextStyle(color: AppConstants.subtitleColor, fontSize: 12),
                 textAlign: TextAlign.center,
               ),
             ],

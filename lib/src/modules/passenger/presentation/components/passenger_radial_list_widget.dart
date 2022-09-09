@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jera_muvver/src/modules/passenger/presentation/model/radial_option_model.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 
 class PassengerRadialListWidget extends StatelessWidget {
   final RadialOptionModel? groupValue;
@@ -26,12 +27,12 @@ class PassengerRadialListWidget extends StatelessWidget {
   RadioListTile _buildSliverList(BuildContext context, int index) {
     const titleStyle = TextStyle(
       fontSize: 14,
-      color: Color(0xFF222222),
+      color: AppConstants.darkColor,
     );
 
     const subtitleStyle = TextStyle(
       fontSize: 12,
-      color: Color(0x8A222222),
+      color: AppConstants.subtitleColor,
     );
 
     final radialOption = objectList[index];

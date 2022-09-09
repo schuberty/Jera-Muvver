@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jera_muvver/src/shared/app/app_constants.dart';
 import 'package:jera_muvver/src/shared/utils.dart';
 
 class PassengerDateTimeForm extends StatelessWidget {
@@ -30,19 +31,19 @@ class PassengerDateTimeForm extends StatelessWidget {
       onTap: () => _onTapFormField(context),
       style: const TextStyle(
         fontSize: 15,
-        color: Color(0xFF222222),
+        color: AppConstants.darkColor,
       ),
       decoration: InputDecoration(
         isDense: true,
         labelText: labelText,
         labelStyle: const TextStyle(
           fontSize: 16,
-          color: Color(0XFF222222),
+          color: AppConstants.darkColor,
         ),
         contentPadding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
         border: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Color(0xFF222222),
+            color: AppConstants.darkColor,
           ),
           borderRadius: BorderRadius.circular(3),
         ),
@@ -88,9 +89,9 @@ class PassengerDateTimeForm extends StatelessWidget {
 
     return Theme(
       data: theme.copyWith(
-        primaryColor: const Color(0xFF16A45C),
+        primaryColor: AppConstants.primaryColor,
         colorScheme: theme.colorScheme.copyWith(
-          primary: const Color(0xFF16A45C),
+          primary: AppConstants.primaryColor,
           secondary: Colors.red,
           surface: Colors.red,
           shadow: Colors.red,
