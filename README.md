@@ -37,6 +37,6 @@ Aplicativo foi testado somente na plataforma Android, não sabendo como pode se 
 
 <div align="center">
 
-
+https://user-images.githubusercontent.com/38429464/189433282-157b872b-da1f-4968-bb28-bda177b1dd7c.mp4
 
 </div>
